@@ -328,10 +328,11 @@ p { margin: 0 0 1em; }
   background-color: var(--ink);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 @media (max-width: 900px) {
-  .hero { align-items: flex-start; background-size: 220% auto; background-position: center center; }
+  .hero { align-items: flex-start; background-size: 220% auto; background-position: center center; background-repeat: no-repeat; }
 }
 .hero::before {
   content: "";
