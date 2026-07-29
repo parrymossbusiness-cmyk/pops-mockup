@@ -332,7 +332,13 @@ p { margin: 0 0 1em; }
   overflow: hidden;
 }
 @media (max-width: 900px) {
-  .hero { align-items: flex-start; background-size: 220% auto; background-position: center center; background-repeat: no-repeat; }
+  .hero {
+    align-items: flex-start;
+    background-image: url('assets/images/hero-mobile.webp') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 .hero::before {
   content: "";
