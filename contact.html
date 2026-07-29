@@ -107,15 +107,53 @@
 </div>
 
 <section id="book">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Book Now</span>
+      <h2>Reserve Your Spot</h2>
+      <p>Pick a service, a barber if you've got a favorite, and a time that works for you.</p>
+    </div>
+
+    <div class="booking-widget card" id="bookingWidget">
+      <div class="booking-row">
+        <label>Service
+          <select id="bkService"></select>
+        </label>
+        <label>Barber
+          <select id="bkBarber"></select>
+        </label>
+        <label>Date
+          <input type="date" id="bkDate">
+        </label>
+      </div>
+
+      <p class="booking-hint" id="bkHint">Pick a service and date to see open times.</p>
+      <div class="slot-grid" id="bkSlots"></div>
+
+      <div id="bkDetailsWrap" style="display:none; margin-top:10px;">
+        <div class="booking-row">
+          <label>Your Name <input type="text" id="bkName"></label>
+          <label>Phone Number <input type="tel" id="bkPhone"></label>
+        </div>
+        <button class="btn btn-primary" id="bkSubmit">Confirm Booking</button>
+      </div>
+
+      <div id="bkConfirmed" style="display:none;"></div>
+      <p id="bkError" class="booking-error" style="display:none;"></p>
+    </div>
+
+    <p class="text-center" style="margin-top:24px;color:var(--slate);">
+      Prefer to just call? <a href="tel:+18705367677" style="color:var(--pop-red);font-weight:700;">(870) 536-7677</a>
+    </p>
+  </div>
+</section>
+
+<section class="section-charcoal">
   <div class="container grid-2">
     <div>
-      <span class="eyebrow">Book Now</span>
-      <h2>The Fastest Way to Get In</h2>
-      <p>We're not on an online booking system yet, so for now the quickest way to grab a spot is a phone call or a walk-in. We'll get this page updated the moment that changes.</p>
-      <div class="hero-ctas" style="justify-content:flex-start;">
-        <a href="tel:+18705367677" class="btn btn-primary">Call (870) 536-7677</a>
-      </div>
-      <table class="hours-table" style="margin-top:32px; max-width:420px; color:var(--ink);">
+      <span class="eyebrow">Hours</span>
+      <h2>When We're Open</h2>
+      <table class="hours-table" style="margin-top:24px; max-width:420px;">
         <tr class="closed"><td>Monday</td><td>Closed</td></tr>
         <tr><td>Tuesday</td><td>7:00 AM – 6:00 PM</td></tr>
         <tr><td>Wednesday</td><td>7:00 AM – 6:00 PM</td></tr>
@@ -129,7 +167,7 @@
       <span class="eyebrow">Visit Us</span>
       <h2>301 S Main St<br>Pine Bluff, AR 71601</h2>
       <p>Right on the corner in downtown Pine Bluff, easy to find, easy to park.</p>
-      <a href="https://www.google.com/maps/place/Pop's+Barber+and+Beauty+Shop/@34.2270352,-92.0057747,17z" target="_blank" rel="noopener" class="btn btn-outline-dark" style="margin-bottom:24px;">Get Directions on Google Maps</a>
+      <a href="https://www.google.com/maps/place/Pop's+Barber+and+Beauty+Shop/@34.2270352,-92.0057747,17z" target="_blank" rel="noopener" class="btn btn-brass" style="margin-bottom:24px;">Get Directions on Google Maps</a>
       <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps?q=301+S+Main+St,+Pine+Bluff,+AR+71601&output=embed"
         title="Map to Pop's Barber & Beauty Shop"></iframe>
@@ -193,5 +231,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/booking.js"></script>
 </body>
 </html>

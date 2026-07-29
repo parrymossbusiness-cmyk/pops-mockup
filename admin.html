@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Calendar | Pop's Barber & Beauty Shop</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--cream);">
+
+<div id="lockScreen" class="admin-lock">
+  <h2>Shop Calendar</h2>
+  <p style="color:var(--slate);margin-bottom:20px;">Enter the shop PIN to view today's bookings.</p>
+  <input type="password" inputmode="numeric" id="pinInput" placeholder="••••">
+  <button class="btn btn-primary" id="pinSubmit" style="width:100%;">Unlock</button>
+  <p id="pinError" style="color:var(--pop-red-dark);display:none;margin-top:10px;">Incorrect PIN.</p>
+</div>
+
+<div id="calendarShell" class="admin-shell" style="display:none;">
+  <div class="admin-toolbar">
+    <img src="assets/images/logo.webp" alt="Pop's" style="height:32px;">
+    <input type="date" id="calDate" style="padding:8px 12px;border-radius:4px;border:1px solid rgba(20,22,26,0.2);">
+    <button class="btn btn-outline-dark" id="blockToggle" style="margin-left:auto;">+ Block Time</button>
+  </div>
+
+  <div id="blockForm" class="card" style="display:none; margin-bottom:24px;">
+    <h3>Block Off Time</h3>
+    <div class="booking-row">
+      <label>Who <select id="blockBarber"><option value="">Whole Shop</option></select></label>
+      <label>Start <input type="time" id="blockStart"></label>
+      <label>End <input type="time" id="blockEnd"></label>
+    </div>
+    <label style="display:block;margin-bottom:14px;">Reason (optional)
+      <input type="text" id="blockReason" style="width:100%;padding:10px;border-radius:4px;border:1px solid rgba(20,22,26,0.2);margin-top:6px;">
+    </label>
+    <button class="btn btn-primary" id="blockSubmit">Save Block</button>
+  </div>
+
+  <h3>Bookings</h3>
+  <ul class="admin-day-list" id="bookingList"><li>Loading…</li></ul>
+
+  <h3 style="margin-top:32px;">Blocked Time</h3>
+  <ul class="admin-day-list" id="blockList"><li>None</li></ul>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
