@@ -1,5 +1,18 @@
 // Pop's Barber & Beauty Shop — shared site behavior
 document.addEventListener('DOMContentLoaded', function () {
+  var siteHeader = document.getElementById('siteHeader') || document.querySelector('.site-header');
+
+  function updateHeaderScrollState() {
+    if (!siteHeader) return;
+    if (window.scrollY > 24) {
+      siteHeader.classList.add('scrolled');
+    } else {
+      siteHeader.classList.remove('scrolled');
+    }
+  }
+  updateHeaderScrollState();
+  window.addEventListener('scroll', updateHeaderScrollState, { passive: true });
+
   var hamburger = document.getElementById('hamburgerBtn');
   var mobileMenu = document.getElementById('mobileMenu');
 

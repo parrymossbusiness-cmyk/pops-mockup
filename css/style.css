@@ -24,7 +24,7 @@
 
   --radius-sm: 4px;
   --radius-md: 8px;
-  --header-h: 92px;
+  --header-h: 108px;
 
   --shadow-card: 0 12px 30px -12px rgba(20, 22, 26, 0.35);
 }
@@ -48,7 +48,9 @@ body {
   color: var(--ink);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  padding-top: var(--header-h);
 }
+body.homepage { padding-top: 0; }
 
 img { max-width: 100%; display: block; }
 
@@ -139,9 +141,16 @@ p { margin: 0 0 1em; }
    HEADER / NAV
    ========================================================= */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
+}
+.site-header.scrolled {
   background: rgba(20, 22, 26, 0.96);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(201, 162, 75, 0.25);
@@ -165,7 +174,7 @@ p { margin: 0 0 1em; }
   gap: 2px;
   flex-shrink: 0;
 }
-.brand-logo { height: 58px; width: auto; }
+.brand-logo { height: 80px; width: auto; }
 .brand-tagline {
   color: var(--cream);
   font-weight: 800;
@@ -345,7 +354,7 @@ p { margin: 0 0 1em; }
   font-size: 0.95rem;
   margin-bottom: 22px;
 }
-.hero-headline { max-width: 780px; margin: 0 0 10px; }
+.hero-headline { max-width: 33%; margin: 0 0 10px; font-size: clamp(1.4rem, 2.6vw, 2.35rem); }
 .hero-sub { max-width: 560px; margin: 0 0 30px; color: var(--cream-dim); }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; justify-content: flex-start; }
 .hero-ctas .btn { min-width: 200px; }
@@ -464,6 +473,9 @@ section { padding: 88px 0; }
   border-bottom: 1px solid rgba(20,22,26,0.1);
 }
 .price-table td:last-child { text-align: right; font-weight: 700; color: var(--pop-red); white-space: nowrap; }
+.section-charcoal .price-table th, .section-dark .price-table th { color: var(--cream); }
+.section-charcoal .price-table td, .section-dark .price-table td { color: var(--cream-dim); border-bottom-color: rgba(245,243,238,0.15); }
+.section-charcoal .price-table td:last-child, .section-dark .price-table td:last-child { color: var(--brass-light); }
 
 /* Team cards */
 .team-card { text-align: center; }
@@ -502,6 +514,9 @@ section { padding: 88px 0; }
 }
 .cta-band h2 { color: var(--cream); }
 .cta-band .btn-ghost { border-color: rgba(245,243,238,0.7); }
+@media (min-width: 641px) {
+  .cta-line { white-space: nowrap; max-width: none !important; }
+}
 
 /* =========================================================
    FOOTER / SITEMAP
@@ -516,7 +531,7 @@ section { padding: 88px 0; }
 @media (max-width: 800px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
-.footer-logo { height: 48px; margin-bottom: 14px; }
+.footer-logo { height: 92px; margin-bottom: 14px; }
 .footer-col h4 {
   color: var(--brass);
   font-family: var(--font-body);
@@ -529,13 +544,12 @@ section { padding: 88px 0; }
 .footer-col li { margin-bottom: 10px; }
 .footer-col a:hover { color: var(--brass-light); }
 .footer-social { display: flex; gap: 12px; margin-top: 16px; }
-.footer-social a {
+.footer-social a.fb-link {
   width: 38px; height: 38px;
-  border: 1px solid rgba(245,243,238,0.25);
-  border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
+  transition: transform 0.15s ease;
 }
-.footer-social a:hover { border-color: var(--brass); color: var(--brass); }
+.footer-social a.fb-link:hover { transform: scale(1.08); }
 .footer-bottom {
   border-top: 1px solid rgba(245,243,238,0.12);
   padding-top: 24px;
@@ -545,6 +559,10 @@ section { padding: 88px 0; }
   gap: 12px;
   font-size: 0.82rem;
   color: var(--slate);
+}
+.footer-bottom span:first-child { white-space: nowrap; }
+@media (max-width: 480px) {
+  .footer-bottom { font-size: 0.68rem; }
 }
 
 /* Utility */

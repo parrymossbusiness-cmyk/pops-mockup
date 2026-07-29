@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var selectedSlot = null;
   var barbersLoaded = [];
+  var FALLBACK_BARBERS = [
+    { id: 1, name: 'Pop' },
+    { id: 2, name: 'Cheston' },
+    { id: 3, name: 'Johnnie' },
+    { id: 4, name: 'Stevie' },
+  ];
 
   // Populate services
   Object.keys(SERVICES).forEach(function (name) {
@@ -44,9 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
   dateInput.min = today;
 
   fetch('/api/barbers').then(function (r) { return r.json(); }).then(function (data) {
-    barbersLoaded = data.barbers || [];
+    barbersLoaded = (data.barbers && data.barbers.length) ? data.barbers : FALLBACK_BARBERS;
     refreshBarberOptions();
-  }).catch(function () { /* barbers dropdown just won't populate; booking still works via Any Available */ });
+  }).catch(function () {
+    barbersLoaded = FALLBACK_BARBERS;
+    refreshBarberOptions();
+  });
 
   function refreshBarberOptions() {
     var category = SERVICES[serviceSel.value] ? SERVICES[serviceSel.value].category : 'barber';
