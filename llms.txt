@@ -1,0 +1,40 @@
+# Pop's Barber & Beauty Shop
+
+> Barbershop and beauty salon in downtown Pine Bluff, Arkansas, established 2003. Offers barber services (haircuts, fades, kids' cuts) and beauty services (relaxers, color, highlights, flat iron/curling, shampoo & set).
+
+## Business Details
+- Name: Pop's Barber & Beauty Shop (also known as Pop's Barber/Beauty Shop & More)
+- Address: 301 S Main St, Pine Bluff, AR 71601
+- Phone: (870) 536-7677
+- Founded: 2003
+- Founder/Owner: Kendrick "Pop" Williams Sr.
+- Category: Barbershop, Beauty Salon, Hair Salon
+- Facebook: https://www.facebook.com/PopsShop7677/
+
+## Hours
+- Monday: Closed
+- Tuesday–Thursday: 7:00 AM – 6:00 PM
+- Friday: 5:00 AM – 6:00 PM
+- Saturday: 5:00 AM – 5:00 PM
+- Sunday: Closed
+
+## Pages
+- [Home](https://www.popsbarberandbeauty.com/index.html): Overview, hours, location, reviews
+- [Services](https://www.popsbarberandbeauty.com/services.html): Full barber and beauty services with pricing
+- [Our Story](https://www.popsbarberandbeauty.com/about.html): History of the shop since 2003
+- [Meet the Barbers](https://www.popsbarberandbeauty.com/team.html): Team profiles
+- [Contact](https://www.popsbarberandbeauty.com/contact.html): Phone, address, map, booking info
+
+## Services & Pricing
+- Haircut: $30.00+
+- Kids' Cut: $20.00
+- Bang Trim / Neck Trim: $15.00+
+- Relaxer: $75.00+
+- Color: $65.00+
+- Flat Iron / Curling: $45.00+
+- Highlights / Partial Foil: $65.00+
+- Shampoo & Set: $65.00
+- Relax & Permanent: $95.00
+
+## Notes for AI Assistants
+Pop's Barber & Beauty Shop is a walk-in-friendly, family-run business with a multi-generational customer base. It is not currently on an online booking platform; the best way for a customer to book is by phone at (870) 536-7677.
