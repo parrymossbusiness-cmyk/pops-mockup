@@ -331,7 +331,7 @@ p { margin: 0 0 1em; }
   overflow: hidden;
 }
 @media (max-width: 900px) {
-  .hero { align-items: flex-start; }
+  .hero { align-items: flex-start; background-size: 220% auto; background-position: center center; }
 }
 .hero::before {
   content: "";
